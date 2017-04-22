@@ -15,11 +15,15 @@ sudo select-editor
 ## 自动任务设置执行时间
 一共有五个参数, 依次是: 分钟, 小时, 天, 月, 星期
 自动任务示例:
+
 \* \* \* \* \* date >> /home/mydate2
+
 //每分钟, 每小时, 每天, 每月, 每一个星期数, 往/home/mydate2 文件里, 写入当前日期时间
 
 如果需写多条自动任务, 一是可以在crontab 中 直接写入多条任务, 每条任务占一行
+
 \* \* \* \* \* date >> /home/mydate2
+
 \* \* \* \* \* cp /home/mydate2 /root
 
 #每天的21:30 重启apache
@@ -36,6 +40,7 @@ sudo select-editor
 以.sh结尾, 例: mytask.sh, 表示一个可执行文件.
 然后在crontab 文件中, 直接写入文件路径, 表示按指定时间 , 执行一次该文件
 crontab -e
+
 \* \* \* \* \*  /root/mytask.sh
 
 ## 重启自动任务
