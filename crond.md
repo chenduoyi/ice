@@ -15,28 +15,28 @@ sudo select-editor
 ## 自动任务设置执行时间
 一共有五个参数, 依次是: 分钟, 小时, 天, 月, 星期
 自动任务示例:
-* * * * * date >> /home/mydate2
+\* \* \* \* \* date >> /home/mydate2
 //每分钟, 每小时, 每天, 每月, 每一个星期数, 往/home/mydate2 文件里, 写入当前日期时间
 
 如果需写多条自动任务, 一是可以在crontab 中 直接写入多条任务, 每条任务占一行
-* * * * * date >> /home/mydate2
-* * * * * cp /home/mydate2 /root
+\* \* \* \* \* date >> /home/mydate2
+\* \* \* \* \* cp /home/mydate2 /root
 
 #每天的21:30 重启apache
-#30 21 * * * service httpd restart
+#30 21 \* \* \* service httpd restart
 
 #每月1号,10号,20号 21:30 重启apache
-#30 21 1,10,20 * * service httpd restart
+#30 21 1,10,20 \* \* service httpd restart
 
 #每月1到10号的21:30 重启apache
-30 21 1-10 * * service httpd restart
+30 21 1-10 \* \* service httpd restart
 
 ## 脚本执行
 第二种办法是, 把需要自动执行的各种任务, 写入一个可执行文件, 然后在自动任务中, 执行这个文件即可
 以.sh结尾, 例: mytask.sh, 表示一个可执行文件.
 然后在crontab 文件中, 直接写入文件路径, 表示按指定时间 , 执行一次该文件
 crontab -e
-* * * * *  /root/mytask.sh
+\* \* \* \* \*  /root/mytask.sh
 
 ## 重启自动任务
 注意, 修改了crontab 自动任务之后, 要重启一下, 才能生效!
@@ -47,11 +47,7 @@ crontab -e
 (前提是crond要加入到service系统服务中去)
 
 ## 小结
-*表示任何时候都匹配
+\*表示任何时候都匹配
 可以用1,2,3 表示几个时间点
 可以用1-10 表示1到10的区间
-可以用*/x , 表示每x分钟(或x小时)执行一次
-
-##动态查看文件内容
-tail -f /tmp/testcrond/date.txt
-
+可以用\*/x , 表示每x分钟(或x小时)执行一次
