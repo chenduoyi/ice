@@ -46,6 +46,9 @@ crontab -e
 ## 命令方式循环
 ```
 * * * * * for i in `seq 60`; do /usr/bin/curl http://abc.com/Autorunning/crontab_check & sleep 1; done
+// seq 60 , [表示多少次循环]
+// do [中间是要执行的命令或方法] & sleep 1; [sleep 1表示每隔1秒运行一次]
+//done [固定写法, 表示命令写完了]
 ```
 
 ## 重启自动任务
