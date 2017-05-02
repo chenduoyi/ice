@@ -43,6 +43,11 @@ crontab -e
 
 \* \* \* \* \*  /root/mytask.sh
 
+## 命令方式循环
+```
+* * * * * for i in `seq 60`; do /usr/bin/curl http://abc.com/Autorunning/crontab_check & sleep 1; done
+```
+
 ## 重启自动任务
 注意, 修改了crontab 自动任务之后, 要重启一下, 才能生效!
 一种方法是, 直接到cron 的目录下, 
