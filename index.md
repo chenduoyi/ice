@@ -5,3 +5,4 @@
 ## [redis安装与自动启动](redis.md)
 ## [自动任务](crond.md)
 ## [系统检测](check.md)
+## [文本批量替换](sed.md)
