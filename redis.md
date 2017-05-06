@@ -4,7 +4,7 @@
 
 下载文件到 /usr/local/src 目录下
 
-wget http://download.redis.io/releases/redis-2.8.13.tar.gz
+```wget http://download.redis.io/releases/redis-2.8.13.tar.gz```
 
 解压文件
 
@@ -53,27 +53,45 @@ redis 127.0.0.1:6379> quit
 ```
 ## phpredis扩展
 下载文件到 /usr/local/src 目录下：
-wget https://github.com/nicolasff/phpredis/archive/2.2.4.tar.gz
+
+```wget https://github.com/nicolasff/phpredis/archive/2.2.4.tar.gz```
 解压文件
+
 tar zxvf phpredis-2.2.4.tar.gz
+
 进入安装目录
+
 cd phpredis-2.2.4
+
 用phpize生成configure配置文件 
+
 /usr/local/php/bin/phpize
+
 phpize就是用来生成php扩展包的安装配置文件, configure, 有些文章直接说, 执行 phpize, 却没说, 这个phpize需要写上具体的路径
 ./configure --with-php-config=/usr/local/php/bin/php-config  #配置 注意, 指定php config路径时, 这里的'=', 等号左右两边不能加空格, 加了空格就会报错.
+
 make  #编译
+
 make install  #安装
 
 安装完成之后，出现下面的安装路径
+
 /usr/local/php/lib/php/extensions/no-debug-non-zts-20090626/
+
 配置php支持
+
 vi /usr/local/php/etc/php.ini
+
 #编辑配置文件，在最后一行添加以下内容
+
 extension="redis.so"
+
 #注意, 单词不要写错
+
 wq
+
 #保存退出
 
 ## 重启服务
+
 重启nginx && php-fpm 两个都重启, 才能生效.
