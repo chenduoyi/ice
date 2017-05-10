@@ -1,6 +1,7 @@
 # linux 笔记目录
 ## [文件基本操作](file.md)
 ## [命令行常用快捷键](shortcut.md)
+## [文件权限用户组](group.md)
 ## [软件安装之rpm安装与源码安装](rpm-yum.md)
 ## [redis安装及phpreids扩展安装](redis.md)
 ## [redis加入自启动](auto-redis.md)
